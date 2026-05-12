@@ -50,11 +50,14 @@ We extend our sincere gratitude to [*CoLaR*](https://github.com/xiaomi-research/
 ## Citation
 If you find RuPLaR useful in your research, please consider citing it. 
 ```
-@article{Luo2026RuPLaR,
-  title={RuPLaR : Efficient Latent Compression of LLM Reasoning Chains with Rule-Based Priors From Multi-Step to One-Step},
-  author={Xiaocheng, Luo and Kang,  Wang and Zaifu, Zhan and Yuechi, Zhou and Xiangyu, Duan},
-  journal={arXiv preprint arXiv:2601.23184},
-  year={2026}
+@misc{luo2026ruplarefficientlatent,
+      title={RuPLaR : Efficient Latent Compression of LLM Reasoning Chains with Rule-Based Priors From Multi-Step to One-Step}, 
+      author={Xiaocheng Luo and Kang Wang and Zaifu Zhan and Yuechi Zhou and Xiangyu Duan},
+      year={2026},
+      eprint={2605.09346},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2605.09346}, 
 }
 ```
 
