@@ -1,9 +1,10 @@
 # RuPLaR : Efficient Latent Compression of LLM Reasoning Chains with Rule-Based Priors From Multi-Step to One-Step
 This is the official code repository for the RuPLaR paper. We provide the source code, which is very easy to hack into, for your convenience.
+
 ![](./figs/latent_reasoning.png)
 
 ## Abstract
-The Chain-of-Thought (CoT) paradigm, while enhancing the interpretability of Large Language Models (LLMs), is constrained by the inefficiencies and expressive limits of natural language. Latent Chain-of-Thought (latent CoT) reasoning, which operates in a continuous latent space, offers a promising alternative but faces challenges from structural complexities in existing multi-step or multi-model paradigms, such as error propagation and coordination overhead. In this paper, we  introduce \textbf{One-Model One-Step}, a novel compression framework for \textbf{La}tent \textbf{R}easoning with \textbf{Ru}le-Based \textbf{P}riors(\textbf{RuPLaR}) to address this challenge. Our method trains an LLM to autonomously generate latent reasoning tokens in a single forward pass, guided by rule-based prior probability distributions, thereby eliminating cascaded processes and inter-model dependencies. To ensure reasoning quality, we design a multi-objective loss function that enforces answer consistency via cross-entropy, aligns soft tokens with a rule-based prior via KL-divergence (the Soft Thinking constraint), and problem-thought semantic alignment constraint that operates in the representation space. Extensive experiments show that our compression framework not only improves accuracy by 10.9\% over existing latent CoT methods but also achieves this with minimal token usage, underscoring its effectiveness and extensibility.
+The Chain-of-Thought (CoT) paradigm, while enhancing the interpretability of Large Language Models (LLMs), is constrained by the inefficiencies and expressive limits of natural language. Latent Chain-of-Thought (latent CoT) reasoning, which operates in a continuous latent space, offers a promising alternative but faces challenges from structural complexities in existing multi-step or multi-model paradigms, such as error propagation and coordination overhead. In this paper, we introduce One-Model One-Step, a novel compression framework for Latent Reasoning with Rule-Based Priors(RuPLaR) to address this challenge. Our method trains an LLM to autonomously generate latent reasoning tokens in a single training stage, guided by rule-based prior probability distributions, thereby eliminating cascaded processes and inter-model dependencies. To ensure reasoning quality, we design a joint training objective that enforces answer consistency via cross-entropy, aligns soft tokens with rule-based priors via KL divergence (the Soft Thinking constraint), and adds a problem-thought semantic alignment constraint in the representation space. Extensive experiments show that our compression framework not only improves accuracy by 11.1% over existing latent CoT methods but also achieves this with minimal token usage, underscoring its effectiveness and extensibility. Code: this https URL.
 
 ## Method
 ![](./figs/overview.png)
@@ -20,13 +21,13 @@ pip install -r requirements.txt
 The training script to be executed for this part is:
 ```
 cd script
-./run_distill_stage2_soft_embedding.sh
+./run.sh
 ```
 
 ### Model Evaluation
 We provide evaluations on four mathematical reasoning datasets — **GSM8k-aug**, **GSM-Hard**, **SVAMP** and **MultiArith** — using **Transformers** implementation frameworks.
 ```
-python eval_soft_embedding_latent_model_hf.py --dataset [GSM8k-aug,GSM8k-hard,SVAMP,MultiArith]
+python eval_model.py --dataset [GSM8k-aug,GSM8k-hard,SVAMP,MultiArith] --model_path your_base_mode_path
 ```
 
 ### Best Model Weights
