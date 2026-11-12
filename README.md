@@ -32,9 +32,9 @@ python eval_model.py --dataset [GSM8k-aug,GSM8k-hard,SVAMP,MultiArith] --model_p
 
 ### Best Model Weights
 The trained model weights are available at the following links:
-- [*llama3.2-instruct-1B-RuPLaR(Temp)*](https://huggingface.co/)
-- [*llama3.2-instruct-1B-RuPLaR(Gumbel)*](https://huggingface.co/)
-- [*llama3.2-instruct-1B-RuPLaR(Mix)*](https://huggingface.co/)
+- [*llama3.2-instruct-1B-RuPLaR(Temp)*](https://huggingface.co/xiaocen/RuPLaR-Temp)
+- [*llama3.2-instruct-1B-RuPLaR(Gumbel)*](https://huggingface.co/xiaocen/RuPLaR-Gumbel)
+- [*llama3.2-instruct-1B-RuPLaR(Mix)*](https://huggingface.co/xiaocen/RuPLaR-Mix)
 
 ## Result
 
